@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-dark">
-                            Form Input Barang Keluar
+                            Form Input Transaksi Barang Keluar
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -37,23 +37,7 @@
                         <?= form_error('tanggal_keluar', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
-                <!-- <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="barang_id">Barang</label>
-                    <div class="col-md-5">
-                        <div class="input-group">
-                            <select name="barang_id" id="barang_id" class="custom-select">
-                                <option value="" selected disabled>Pilih Barang</option>
-                                <?php foreach ($barang as $b) : ?>
-                                    <option value="<?= $b['id_barang'] ?>"><?= $b['id_barang'] . ' | ' . $b['nama_barang'] ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                            <!-- <div class="input-group-append">
-                                <a class="btn btn-danger" href="<?= base_url('barang/add'); ?>"><i class="fa fa-plus"></i></a>
-                            </div> -->
-                        </div>
-                        <?= form_error('barang_id', '<small class="text-danger">', '</small>'); ?>
-                    </div>
-                </div> -->
+            
                 <!-- <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="stok">Stok</label>
                     <div class="col-md-5">
