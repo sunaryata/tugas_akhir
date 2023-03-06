@@ -25,6 +25,19 @@ class Barangreturn extends CI_Controller
         // var_dump($data);
     }
 
+    public function detail($id_barang_return = null)
+	{
+		if (!$id_barang_return) {
+			header('Location: ../');
+		}
+		$data['title'] = "Barang Return Detail";
+		$data['id_barang_return'] = $id_barang_return;
+		$data['barang'] = $this->admin->get('barang');
+		$data['barangmasuk'] = $this->admin->getBarangReturnDetail($id_barang_return);
+		$this->template->load('templates/dashboard', 'barang_return_detail/data', $data);
+		// var_dump($data);
+	}
+
     private function _validasi()
     {
         $this->form_validation->set_rules('tanggal_return', 'Tanggal return', 'required|trim');
