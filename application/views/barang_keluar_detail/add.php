@@ -47,10 +47,10 @@
 					</div>
 				</div>
 				<div class="row form-group">
-					<label class="col-md-4 text-md-right" for="jumlah_masuk">Jumlah Masuk</label>
+					<label class="col-md-4 text-md-right" for="jumlah_keluar">Jumlah Masuk</label>
 					<div class="col-md-5">
 						<div class="input-group">
-							<input value="<?= set_value('jumlah_masuk'); ?>" name="jumlah_masuk" id="jumlah_masuk" type="number" class="form-control" placeholder="Jumlah Masuk..." min="1">
+							<input value="<?= set_value('jumlah_masuk'); ?>" name="jumlah_masuk" id="jumlah_keluar" type="number" class="form-control" placeholder="Jumlah Masuk..." min="1">
 							<div class="input-group-append">
 								<span class="input-group-text" id="satuan">Satuan</span>
 							</div>
@@ -61,7 +61,7 @@
 				<div class="row form-group">
 					<label class="col-md-4 text-md-right" for="total_stok">Total Stok</label>
 					<div class="col-md-5">
-						<input readonly="readonly" id="total_stok" type="number" class="form-control">
+						<input readonly="readonly" id="total_stok" name="total_stok" type="number" class="form-control">
 					</div>
 				</div>
 				<div class="row form-group">

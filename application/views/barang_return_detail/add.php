@@ -5,11 +5,11 @@
 				<div class="row">
 					<div class="col">
 						<h4 class="h5 align-middle m-0 font-weight-bold text-dark">
-							Form Input Barang Keluar
+							Form Input Barang Return
 						</h4>
 					</div>
 					<div class="col-auto">
-						<a href="<?= base_url('barangkeluar/detail/' . $id_barang_keluar) ?>" class="btn btn-sm btn-secondary btn-icon-split">
+						<a href="<?= base_url('barangreturn/detail/' . $id_barang_return) ?>" class="btn btn-sm btn-secondary btn-icon-split">
 							<span class="icon">
 								<i class="fa fa-arrow-left"></i>
 							</span>
@@ -46,11 +46,12 @@
 						<input readonly="readonly" id="stok" type="number" class="form-control">
 					</div>
 				</div>
+			
 				<div class="row form-group">
-					<label class="col-md-4 text-md-right" for="jumlah_masuk">Jumlah Masuk</label>
+					<label class="col-md-4 text-md-right" for="jumlah_masuk">Jumlah Return</label>
 					<div class="col-md-5">
 						<div class="input-group">
-							<input value="<?= set_value('jumlah_masuk'); ?>" name="jumlah_masuk" id="jumlah_masuk" type="number" class="form-control" placeholder="Jumlah Masuk..." min="1">
+							<input value="<?= set_value('jumlah_masuk'); ?>" name="jumlah_masuk" id="jumlah_return" type="number" class="form-control" placeholder="Jumlah Masuk..." min="1">
 							<div class="input-group-append">
 								<span class="input-group-text" id="satuan">Satuan</span>
 							</div>

@@ -215,9 +215,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($transaksi['barang_masuk'] as $tbm) : ?>
+                        <?php foreach ($transaksi['barang_return'] as $tbm) : ?>
                             <tr>
-                                <td><strong><?= $tbm['tanggal_masuk']; ?></strong></td>
+                                <td><strong><?= $tbm['tanggal_return']; ?></strong></td>
                                 <td><?= $tbm['nama_barang']; ?></td>
                                 <td><span class="badge badge-warning"><?= $tbm['jumlah_masuk']; ?></span></td>
                             </tr>
@@ -253,7 +253,7 @@
                             <tr>
                                 <td><strong><?= $tbk['tanggal_keluar']; ?></strong></td>
                                 <td><?= $tbk['nama_barang']; ?></td>
-                                <td><span class="badge badge-danger"><?= $tbk['jumlah_keluar']; ?></span></td>
+                                <td><span class="badge badge-danger"><?= $tbk['jumlah_masuk']; ?></span></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

@@ -30,6 +30,7 @@
                     <th>No Transaksi</th>
                     <th>Tanggal return</th>
                     <th>User</th>
+                    <th>Nama Supplier</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -44,13 +45,14 @@
                             <td><?= $bk['id_barang_return']; ?></td>
                             <td><?= $bk['tanggal_return']; ?></td>
                             <td><?= $bk['nama']; ?></td>
+                            <td><?= $bk['nama_supplier']; ?></td>
+
                             <td>
                                 <?php
                                 if ($dataSession['role'] == "admin") {
                                 ?>
 									<a href="<?= base_url('barangreturn/detail/') . $bk['id_barang_return'] ?>" class="btn btn-primary btn-circle btn-sm" title="detail"><i class="fa fa-eye"></i></a>
-
-                                    <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barang/delete/') . $bk['id_barang_return'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
+                                    <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangreturn/delete/') . $bk['id_barang_return'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
                                 <?php
                                 } elseif ($dataSession['role'] == "gudang" or $dataSession['role'] == "kasir") {
                                 ?>

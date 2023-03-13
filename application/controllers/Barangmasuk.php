@@ -37,8 +37,8 @@ class Barangmasuk extends CI_Controller
 	{
 		$this->form_validation->set_rules('tanggal_masuk', 'Tanggal Masuk', 'required|trim');
 		$this->form_validation->set_rules('supplier_id', 'Supplier', 'required');
-		$this->form_validation->set_rules('barang_id', 'Barang', 'required');
-		$this->form_validation->set_rules('jumlah_masuk', 'Jumlah Masuk', 'required|trim|numeric|greater_than[0]');
+		// $this->form_validation->set_rules('barang_id', 'Barang', 'required');
+		// $this->form_validation->set_rules('jumlah_masuk', 'Jumlah Masuk', 'required|trim|numeric|greater_than[0]');
 	}
 
 	private function _validasi_detail()
@@ -99,6 +99,13 @@ class Barangmasuk extends CI_Controller
 				'jumlah_masuk' => $_REQUEST['jumlah_masuk'],
 			]);
 			var_dump($input);
+			$id_barang = $_REQUEST['barang_id'];
+
+			$dataku = $this->admin->get('barang', ['id_barang' => $id_barang]);
+			$total_stok = $dataku['stok'] + $_REQUEST['jumlah_masuk'];
+			$this->db->set('stok', $total_stok);
+			$this->db->where('id_barang', $_REQUEST['barang_id']);
+			$this->db->update('barang');
 			// die;
 
 			if ($insert) {

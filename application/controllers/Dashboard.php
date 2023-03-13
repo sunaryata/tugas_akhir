@@ -22,6 +22,7 @@ class Dashboard extends CI_Controller
 		$data['stok'] = $this->admin->sum('barang', 'stok');
 		$data['barang_min'] = $this->admin->min('barang', 'stok', 10);
 		$data['transaksi'] = [
+			'barang_return' => $this->admin->getBarangReturnDetailAll(5),
 			'barang_masuk' => $this->admin->getBarangMasukDetailAll(5),
 			'barang_keluar' => $this->admin->getBarangKeluarDetailAll(5)
 		];

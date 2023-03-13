@@ -54,7 +54,7 @@
                         <?= form_error('supplier_id', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
-                <div class="row form-group">
+                <!-- <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="barang_id">Barang</label>
                     <div class="col-md-5">
                         <div class="input-group">
@@ -64,20 +64,18 @@
                                     <option <?= $this->uri->segment(3) == $b['id_barang'] ? 'selected' : '';  ?> <?= set_select('barang_id', $b['id_barang']) ?> value="<?= $b['id_barang'] ?>"><?= $b['id_barang'] . ' | ' . $b['nama_barang'] ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <!-- <div class="input-group-append">
-                                <a class="btn btn-primary" href="<?= base_url('barang/add'); ?>"><i class="fa fa-plus"></i></a>
-                            </div> -->
+                       
                         </div>
                         <?= form_error('barang_id', '<small class="text-danger">', '</small>'); ?>
                     </div>
-                </div>
-                <div class="row form-group">
+                </div> -->
+                <!-- <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="stok">Stok</label>
                     <div class="col-md-5">
                         <input readonly="readonly" id="stok" type="number" class="form-control">
                     </div>
-                </div>
-                <div class="row form-group">
+                </div> -->
+                <!-- <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="jumlah_masuk">Jumlah Masuk</label>
                     <div class="col-md-5">
                         <div class="input-group">
@@ -88,13 +86,13 @@
                         </div>
                         <?= form_error('jumlah_masuk', '<small class="text-danger">', '</small>'); ?>
                     </div>
-                </div>
-                <div class="row form-group">
+                </div> -->
+                <!-- <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="total_stok">Total Stok</label>
                     <div class="col-md-5">
                         <input readonly="readonly" id="total_stok" type="number" class="form-control">
                     </div>
-                </div>
+                </div> -->
                 <div class="row form-group">
                     <div class="col offset-md-4">
                         <button type="submit" class="btn btn-primary">Simpan</button>

@@ -123,6 +123,9 @@ class Admin_model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->join('user u', 'br.user_id = u.id_user');
+		$this->db->join('supplier s', 'br.id_supplier = s.id_supplier');
+
+		
 
 
 		if ($limit != null) {
@@ -143,8 +146,11 @@ class Admin_model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->where('dbm.id_barang_return', $id_barang_return);
+		// $this->db->join('supplier', 'dbm.id_supplier = supplier.id_supplier');
+		
 		$this->db->join('barang', 'dbm.barang_id = barang.id_barang');
 		$this->db->join('satuan', 'barang.satuan_id = satuan.id_satuan');
+
 		if ($limit != null) {
 			$this->db->limit($limit);
 		}

@@ -119,10 +119,10 @@
 	let jumlah_barang = 0;
 
 	function update(id_barang_keluar_detail) {
-		$('#form-edit').attr('action', `<?= base_url('barangmasuk/edit_detail') ?>/${id_barang_keluar_detail}`);
+		$('#form-edit').attr('action', `<?= base_url('barangkeluar/edit_detail') ?>/${id_barang_keluar_detail}`);
 		$.ajax({
 			type: "get",
-			url: `<?= base_url('barangmasuk/api_detail_barang_masuk') ?>/${id_barang_keluar_detail}`,
+			url: `<?= base_url('barangkeluar/api_detail_barang_keluar') ?>/${id_barang_keluar_detail}`,
 			dataType: "json",
 			success: function(response) {
 				console.log(response);
@@ -140,9 +140,10 @@
 	function change_jumlah_barang() {
 		const stok = $('#stok').val();
 		const data_jumlah_barang = $('#jumlah_barang').val();
+		console.log(Number(stok) + Number(jumlah_barang) - Number(data_jumlah_barang));
 
 		console.log(data_jumlah_barang - jumlah_barang);
 		console.log(data_jumlah_barang, jumlah_barang);
-		$('#total_stok').val(Number(stok) + Number(Number(data_jumlah_barang) - Number(jumlah_barang)));
+		$('#total_stok').val(Number(stok) + Number(jumlah_barang) - Number(data_jumlah_barang));
 	}
 </script>

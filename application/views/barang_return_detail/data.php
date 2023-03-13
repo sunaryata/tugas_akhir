@@ -8,7 +8,7 @@
 				</h4>
 			</div>
 			<div class="col-auto">
-				<a href="<?= base_url('barangkeluar/add_detail/' . $id_barang_return) ?>" class="btn btn-sm btn-primary btn-icon-split">
+				<a href="<?= base_url('barangreturn/add_detail/' . $id_barang_return) ?>" class="btn btn-sm btn-primary btn-icon-split">
 					<span class="icon">
 						<i class="fa fa-plus"></i>
 					</span>
@@ -43,16 +43,17 @@
 							<td><?= $no++; ?></td>
 							<td><?= $bm['nama_barang']; ?></td>
 							<td><?= $bm['jumlah_masuk']; ?></td>
+
 							<td>
 								<?php
 								if ($dataSession['role'] == "admin") {
 								?>
-									<button type="button" class="btn btn-primary btn-circle btn-sm" title="Update" data-toggle="modal" data-target="#exampleModal" onclick="update('<?= $bm['id_detail_barang_keluar'] ?>')"><i class="fa fa-edit"></i></button>
-									<a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangkeluar/delete/') . $bm['id_barang_return'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
+									<button type="button" class="btn btn-primary btn-circle btn-sm" title="Update" data-toggle="modal" data-target="#exampleModal" onclick="update('<?= $bm['id_detail_barang_return'] ?>')"><i class="fa fa-edit"></i></button>
+									<a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangreturn/delete/') . $bm['id_detail_barang_return'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
 								<?php
 								} elseif ($dataSession['role'] == "gudang" or $dataSession['role'] == "kasir") {
 								?>
-									<a href="<?= base_url('barangmasuk/edit/') . $bm['id_barang_return'] ?>" class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i></a>
+									<a href="<?= base_url('barangreturn/edit/') . $bm['id_barang_return'] ?>" class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i></a>
 								<?php
 								} else {
 								}
@@ -87,7 +88,7 @@
 					<div class="form-group">
 						<label for="id_barang">Barang</label>
 						<select class="form-control" name="id_barang" id="id_barang" disabled>
-							<option value="">Pilih barang</option>
+							<option value="">Pilih Barang</option>
 							<?php foreach ($barang as $key => $value) { ?>
 								<option value="<?= $value['id_barang'] ?>"><?= $value['nama_barang'] ?></option>
 							<?php } ?>
@@ -119,10 +120,10 @@
 	let jumlah_barang = 0;
 
 	function update(id_barang_return_detail) {
-		$('#form-edit').attr('action', `<?= base_url('barangmasuk/edit_detail') ?>/${id_barang_return_detail}`);
+		$('#form-edit').attr('action', `<?= base_url('barangreturn/edit_detail') ?>/${id_barang_return_detail}`);
 		$.ajax({
 			type: "get",
-			url: `<?= base_url('barangmasuk/api_detail_barang_masuk') ?>/${id_barang_return_detail}`,
+			url: `<?= base_url('barangreturn/api_detail_barang_masuk') ?>/${id_barang_return_detail}`,
 			dataType: "json",
 			success: function(response) {
 				console.log(response);
@@ -140,9 +141,10 @@
 	function change_jumlah_barang() {
 		const stok = $('#stok').val();
 		const data_jumlah_barang = $('#jumlah_barang').val();
+		console.log('ini stok',Number(stok) + Number(jumlah_barang)-Number(data_jumlah_barang));
 
 		console.log(data_jumlah_barang - jumlah_barang);
 		console.log(data_jumlah_barang, jumlah_barang);
-		$('#total_stok').val(Number(stok) + Number(Number(data_jumlah_barang) - Number(jumlah_barang)));
+		$('#total_stok').val(Number(stok) + Number(jumlah_barang)-Number(data_jumlah_barang));
 	}
 </script>

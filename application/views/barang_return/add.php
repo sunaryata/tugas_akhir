@@ -38,44 +38,20 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="barang_id">Barang</label>
+                    <label class="col-md-4 text-md-right" for="id_supplier">Supplier</label>
                     <div class="col-md-5">
                         <div class="input-group">
-                            <select name="barang_id" id="barang_id" class="custom-select">
-                                <option value="" selected disabled>Pilih Barang</option>
-                                <?php foreach ($barang as $b) : ?>
-                                    <option value="<?= $b['id_barang'] ?>"><?= $b['id_barang'] . ' | ' . $b['nama_barang'] ?></option>
+                            <select name="id_supplier" id="id_supplier" class="custom-select">
+                                <option value="" selected disabled>Pilih Supplier</option>
+                                <?php foreach ($supplier as $s) : ?>
+                                    <option <?= set_select('id_supplier', $s['id_supplier']) ?> value="<?= $s['id_supplier'] ?>"><?= $s['nama_supplier'] ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <!-- <div class="input-group-append">
-                                <a class="btn btn-danger" href="<?= base_url('barang/add'); ?>"><i class="fa fa-plus"></i></a>
+                                <a class="btn btn-danger" href="<?= base_url('supplier/add'); ?>"><i class="fa fa-plus"></i></a>
                             </div> -->
                         </div>
-                        <?= form_error('barang_id', '<small class="text-danger">', '</small>'); ?>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="stok">Stok</label>
-                    <div class="col-md-5">
-                        <input readonly="readonly" id="stok" type="number" class="form-control">
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="jumlah_return">Jumlah return</label>
-                    <div class="col-md-5">
-                        <div class="input-group">
-                            <input value="<?= set_value('jumlah_return'); ?>" name="jumlah_return" id="jumlah_return" type="number" class="form-control" placeholder="Jumlah return...">
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="satuan">Satuan</span>
-                            </div>
-                        </div>
-                        <?= form_error('jumlah_return', '<small class="text-danger">', '</small>'); ?>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="total_stok">Predikasi Stok Berkurang</label>
-                    <div class="col-md-5">
-                        <input readonly="readonly" id="total_stok" type="number" class="form-control">
+                        <?= form_error('id_supplier', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">

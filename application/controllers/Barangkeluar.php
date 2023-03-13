@@ -106,6 +106,10 @@ class Barangkeluar extends CI_Controller
 				'jumlah_masuk' => $_REQUEST['jumlah_masuk'],
 			]);
 			var_dump($input);
+
+            $this->db->set('stok', $_REQUEST['total_stok']);
+		$this->db->where('id_barang', $_REQUEST['barang_id']);
+		$this->db->update('barang');
 			// die;
 
 			if ($insert) {
@@ -174,6 +178,47 @@ class Barangkeluar extends CI_Controller
         }
     }
 
+    public function edit_detail($id_detail_barang_keluar)
+	{
+		$detail_barang_keluar = $this->db->where('id_detail_barang_keluar', $id_detail_barang_keluar)->get('detail_barang_keluar')->row_array();
+		$datamasuk = $this->db->where('id_barang_keluar', $detail_barang_keluar['id_barang_keluar'])->get('barang_keluar')->row_array();
+
+		$ambildatamasuk = $detail_barang_keluar['jumlah_masuk'];
+
+		//ambil ID Barang
+		$data['barang'] = $this->admin->get('barang', ['id_barang' => $detail_barang_keluar['barang_id']]);
+
+		$dataku = $this->admin->get('barang', ['id_barang' => $detail_barang_keluar['barang_id']]);
+
+		$cekdata = $dataku['stok'] - $ambildatamasuk;
+		$total_barang = $cekdata + $_POST['jumlah_barang'];
+        $total_stok= $_POST['total_stok'];
+
+		// echo "<pre>";
+		// print_r($total_barang);
+		// echo "</pre>";
+
+		// die;
+
+		//update manual data barang
+		$this->db->set('stok', $total_stok);
+		$this->db->where('id_barang', $detail_barang_keluar['barang_id']);
+		$this->db->update('barang');
+
+
+		// update data barang masuk kaka
+		$update = $this->db->where('id_detail_barang_keluar', $id_detail_barang_keluar)->update('detail_barang_keluar', [
+			'jumlah_masuk' => $_POST['jumlah_barang'],
+		]);
+		if ($update) {
+			set_pesan('data berhasil disimpan');
+			redirect('barangkeluar/detail/' . $detail_barang_keluar['id_barang_keluar']);
+		} else {
+			set_pesan('gagal menyimpan data');
+			redirect('barangkeluar/detail/' . $detail_barang_keluar['id_barang_keluar']);
+		}
+	}
+
 
     public function delete($getId)
     {
@@ -185,4 +230,12 @@ class Barangkeluar extends CI_Controller
         }
         redirect('barangkeluar');
     }
+
+    public function api_detail_barang_keluar($id_detail_barang_keluar)
+	{
+		$this->db->join('barang', 'detail_barang_keluar.barang_id = barang.id_barang');
+		$this->db->where('id_detail_barang_keluar', $id_detail_barang_keluar);
+		$data = $this->db->get('detail_barang_keluar')->row();
+		echo json_encode($data);
+	}
 }
