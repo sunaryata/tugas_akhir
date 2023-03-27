@@ -161,7 +161,7 @@ class Laporan extends CI_Controller
                 $pdf->Cell(45, 7, $d['id_barang_return'], 1, 0, 'C');
                 $pdf->Cell(65, 7, $d['nama_barang'], 1, 0, 'L');
                 // $pdf->Cell(40, 7, $d['nama_supplier'], 1, 0, 'L');
-                $pdf->Cell(30, 7, $d['jumlah_return'] . ' ' . $d['nama_satuan'], 1, 0, 'C');
+                $pdf->Cell(30, 7, $d['jumlah_masuk'] . ' ' . $d['nama_satuan'], 1, 0, 'C');
                 $pdf->Ln();
            
             } else :
@@ -258,7 +258,7 @@ class Laporan extends CI_Controller
                 $pdf->Cell(25, 7, $d['tanggal_keluar'], 1, 0, 'C');
                 $pdf->Cell(35, 7, $d['id_barang_keluar'], 1, 0, 'C');
                 $pdf->Cell(95, 7, $d['nama_barang'], 1, 0, 'L');
-                $pdf->Cell(30, 7, $d['jumlah_keluar'] . ' ' . $d['nama_satuan'], 1, 0, 'C');
+                $pdf->Cell(30, 7, $d['jumlah_masuk'] . ' ' . $d['nama_satuan'], 1, 0, 'C');
                 $pdf->Ln();
             }
         endif;

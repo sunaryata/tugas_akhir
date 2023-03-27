@@ -70,6 +70,10 @@ class Admin_model extends CI_Model
 		$this->db->select('*');
 		$this->db->join('user u', 'bm.user_id = u.id_user');
 		$this->db->join('supplier sp', 'bm.supplier_id = sp.id_supplier');
+		$this->db->join('detail_barang_masuk dbm', 'bm.id_barang_masuk = dbm.id_barang_masuk');
+		$this->db->join('barang br', 'dbm.barang_id = br.id_barang');
+		$this->db->join('satuan st', 'br.satuan_id = st.id_satuan');
+
 		if ($limit != null) {
 			$this->db->limit($limit);
 		}
@@ -124,6 +128,9 @@ class Admin_model extends CI_Model
 		$this->db->select('*');
 		$this->db->join('user u', 'br.user_id = u.id_user');
 		$this->db->join('supplier s', 'br.id_supplier = s.id_supplier');
+		$this->db->join('detail_barang_return dbr', 'br.id_barang_return = dbr.id_barang_return');
+		$this->db->join('barang b', 'dbr.barang_id = b.id_barang');
+		$this->db->join('satuan st', 'b.satuan_id = st.id_satuan');
 
 		
 
@@ -138,7 +145,7 @@ class Admin_model extends CI_Model
 			$this->db->where('tanggal_return' . ' <=', $range['akhir']);
 		}
 
-		$this->db->order_by('id_barang_return', 'DESC');
+		$this->db->order_by('br.id_barang_return', 'DESC');
 		return $this->db->get('barang_return br')->result_array();
 	}
 
@@ -183,6 +190,10 @@ class Admin_model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->join('user u', 'bK.user_id = u.id_user');
+		$this->db->join('detail_barang_keluar dbk', 'bk.id_barang_keluar = dbk.id_barang_keluar');
+		$this->db->join('barang br', 'dbk.barang_id = br.id_barang');
+		$this->db->join('satuan st', 'br.satuan_id = st.id_satuan');
+
 		if ($limit != null) {
 			$this->db->limit($limit);
 		}
