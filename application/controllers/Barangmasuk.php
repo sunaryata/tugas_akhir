@@ -15,7 +15,7 @@ class Barangmasuk extends CI_Controller
 	public function index()
 	{
 		$data['title'] = "Barang Masuk";
-		$data['barangmasuk'] = $this->admin->getBarangMasuk();
+		$data['barangmasuk'] = $this->admin->getBarangMasukList();
 		$this->template->load('templates/dashboard', 'barang_masuk/data', $data);
 		// var_dump($data);
 	}

@@ -54,7 +54,7 @@ class Laporan extends CI_Controller
         $pdf = new FPDF();
         $pdf->AddPage('P', 'Letter');
         $pdf->SetFont('Times', 'B', 16);
-        $pdf->Cell(190, 7, 'Laporan Data Barang' . $table, 0, 1, 'C');
+        $pdf->Cell(190, 7, 'Laporan Data Barang', 0, 1, 'C');
         // $pdf->SetFont('Times', '', 10);
         // $pdf->Cell(190, 4, 'Tanggal : ' . $tanggal, 0, 1, 'C');
         $pdf->Ln(10);
@@ -119,10 +119,10 @@ class Laporan extends CI_Controller
         // batas
         // batas
         $pdf->Cell(182, 4, '                                                                                                   Yogyakarta ' . $tanggalku, 0, 1, 'C');
-        $pdf->Cell(185, 4, '                                                                                                 Pimpinan Gudang ', 0, 1, 'C');
+        $pdf->Cell(185, 4, '                                                                                                 Pimpinan ', 0, 1, 'C');
         // $pdf->Cell(290, 4, 'Petugas Gudang Tanggal : ' . $tanggalku, 0, 1, 'C');
         $pdf->Ln(20);
-        $pdf->Cell(175, 4,  '                                                                                                         ALfikriJihadi', 0, 1, 'C');
+        $pdf->Cell(175, 4,  '                                                                                                         Afandi Ahmad', 0, 1, 'C');
 
 
         $file_name = $table . ' ';
@@ -197,10 +197,10 @@ class Laporan extends CI_Controller
         // batas
        // batas
        $pdf->Cell(182, 4, '                                                                                                   Yogyakarta ' . $tanggalku, 0, 1, 'C');
-       $pdf->Cell(185, 4, '                                                                                                 Pimpinan Gudang ', 0, 1, 'C');
+       $pdf->Cell(185, 4, '                                                                                                 Pimpinan ', 0, 1, 'C');
        // $pdf->Cell(290, 4, 'Petugas Gudang Tanggal : ' . $tanggalku, 0, 1, 'C');
        $pdf->Ln(20);
-       $pdf->Cell(175, 4,  '                                                                                                         AlfikriJihadi', 0, 1, 'C');
+       $pdf->Cell(175, 4,  '                                                                                                         Afandi Ahmad', 0, 1, 'C');
 
 
         $file_name = $table . ' ' . $tanggal;
@@ -275,7 +275,7 @@ class Laporan extends CI_Controller
 
         // batas
         $pdf->Cell(182, 4, '                                                                                                   Yogyakarta ' . $tanggalku, 0, 1, 'C');
-        $pdf->Cell(185, 4, '                                                                                                 Pimpinan Gudang ', 0, 1, 'C');
+        $pdf->Cell(185, 4, '                                                                                                 Pimpinan ', 0, 1, 'C');
         // $pdf->Cell(290, 4, 'Petugas Gudang Tanggal : ' . $tanggalku, 0, 1, 'C');
         $pdf->Ln(20);
         $pdf->Cell(175, 4,  '                                                                                                         Afandi Ahmad', 0, 1, 'C');

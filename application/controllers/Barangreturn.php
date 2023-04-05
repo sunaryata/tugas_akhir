@@ -15,7 +15,7 @@ class Barangreturn extends CI_Controller
     public function index()
     {
         $data['title'] = "Barang Return";
-        $data['barangreturn'] = $this->admin->getBarangReturn();
+        $data['barangreturn'] = $this->admin->getBarangReturnList();
         $this->template->load('templates/dashboard', 'barang_return/data', $data);
         // var_dump($data);
         // die;
