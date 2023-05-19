@@ -220,16 +220,46 @@ class Barangkeluar extends CI_Controller
 	}
 
 
-    public function delete($getId)
+    // public function delete($getId)
+    // {
+    //     $id = encode_php_tags($getId);
+    //     if ($this->admin->delete('barang_keluar', 'id_barang_keluar', $id)) {
+    //         set_pesan('data berhasil dihapus.');
+    //     } else {
+    //         set_pesan('data gagal dihapus.', false);
+    //     }
+    //     redirect('barangkeluar');
+    // }
+
+
+    public function deleteitem($getId)
     {
-        $id = encode_php_tags($getId);
-        if ($this->admin->delete('barang_keluar', 'id_barang_keluar', $id)) {
+        echo $id = encode_php_tags($getId);
+        if ($this->admin->delete('detail_barang_keluar', 'id_detail_barang_keluar', $id)) {
             set_pesan('data berhasil dihapus.');
         } else {
             set_pesan('data gagal dihapus.', false);
         }
         redirect('barangkeluar');
     }
+
+    public function delete($getId)
+	{
+		$id = encode_php_tags($getId);
+
+		$this->db->where('id_barang_keluar', $getId);
+		$data_detail = count($this->db->get('detail_barang_keluar')->result());
+		if ($data_detail > 0) {
+			set_pesan('data gagal dihapus. Data detail sudah ada', false);
+			redirect('barangkeluar');
+		}
+		if ($this->admin->delete('barang_keluar', 'id_barang_keluar', $id)) {
+			set_pesan('data berhasil dihapus.');
+		} else {
+			set_pesan('data gagal dihapus.', false);
+		}
+		redirect('barangkeluar');
+	}
 
     public function api_detail_barang_keluar($id_detail_barang_keluar)
 	{

@@ -355,9 +355,9 @@ class Barangreturn extends CI_Controller
 		}
 	}
 
-    public function delete($getId)
+    public function deleteitem($getId)
     {
-        $id = encode_php_tags($getId);
+        echo $id = encode_php_tags($getId);
         if ($this->admin->delete('detail_barang_return', 'id_detail_barang_return', $id)) {
             set_pesan('data berhasil dihapus.');
         } else {
@@ -365,6 +365,25 @@ class Barangreturn extends CI_Controller
         }
         redirect('barangreturn');
     }
+
+    
+	public function delete($getId)
+	{
+		$id = encode_php_tags($getId);
+
+		$this->db->where('id_barang_return', $getId);
+		$data_detail = count($this->db->get('detail_barang_return')->result());
+		if ($data_detail > 0) {
+			set_pesan('data gagal dihapus. Data detail sudah ada', false);
+			redirect('barangreturn');
+		}
+		if ($this->admin->delete('barang_return', 'id_barang_return', $id)) {
+			set_pesan('data berhasil dihapus.');
+		} else {
+			set_pesan('data gagal dihapus.', false);
+		}
+		redirect('barangreturn');
+	}
 
     public function api_detail_barang_masuk($id_detail_barang_masuk)
 	{

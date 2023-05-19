@@ -49,7 +49,7 @@
                                 if ($dataSession['role'] == "admin") {
                                 ?>
 									<a href="<?= base_url('barangkeluar/detail/') . $bk['id_barang_keluar'] ?>" class="btn btn-primary btn-circle btn-sm" title="detail"><i class="fa fa-eye"></i></a>
-                                    <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barang/delete/') . $bk['id_barang_keluar'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
+                                    <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangkeluar/delete/') . $bk['id_barang_keluar'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
                                 <?php
                                 } elseif ($dataSession['role'] == "gudang" or $dataSession['role'] == "kasir") {
                                 ?>
