@@ -1,6 +1,6 @@
-<div class="card p-2 shadow-sm border-bottom-danger">
+<div class="card p-2 shadow-sm border-bottom-dark">
     <div class="card-header bg-white">
-        <h4 class="h5 align-middle m-0 font-weight-bold text-danger">
+        <h4 class="h5 align-middle m-0 font-weight-bold text-dark">
             <?= userdata('nama'); ?>
         </h4>
     </div>
@@ -8,8 +8,8 @@
         <div class="row">
             <div class="col-md-2 mb-4 mb-md-0">
                 <img src="<?= base_url() ?>assets/img/avatar/<?= userdata('foto'); ?>" alt="" class="img-thumbnail rounded mb-2">
-                <a href="<?= base_url('profile/setting'); ?>" class="btn btn-sm btn-block btn-danger"><i class="fa fa-edit"></i> Edit Profile</a>
-                <a href="<?= base_url('profile/ubahpassword'); ?>" class="btn btn-sm btn-block btn-danger"><i class="fa fa-lock"></i> Ubah Password</a>
+                <a href="<?= base_url('profile/setting'); ?>" class="btn btn-sm btn-block btn-primary"><i class="fa fa-edit"></i> Edit Profile</a>
+                <a href="<?= base_url('profile/ubahpassword'); ?>" class="btn btn-sm btn-block btn-primary"><i class="fa fa-lock"></i> Ubah Password</a>
             </div>
             <div class="col-md-10">
                 <table class="table">

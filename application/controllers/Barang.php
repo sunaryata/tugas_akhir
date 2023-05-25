@@ -91,7 +91,7 @@ class Barang extends CI_Controller
 
             if ($update) {
                 set_pesan('data berhasil disimpan');
-                redirect('barangmasuk');
+                redirect('barang');
 
             } else {
                 set_pesan('gagal menyimpan data');

@@ -51,7 +51,7 @@
 					<label class="col-md-4 text-md-right" for="jumlah_masuk">Jumlah Return</label>
 					<div class="col-md-5">
 						<div class="input-group">
-							<input value="<?= set_value('jumlah_masuk'); ?>" name="jumlah_masuk" id="jumlah_return" type="number" class="form-control" placeholder="Jumlah Masuk..." min="1">
+							<input value="<?= set_value('jumlah_masuk'); ?>" name="jumlah_masuk" id="jumlah_return" type="number" class="form-control" placeholder="Jumlah Return..." min="1">
 							<div class="input-group-append">
 								<span class="input-group-text" id="satuan">Satuan</span>
 							</div>
