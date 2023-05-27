@@ -48,7 +48,7 @@
 								if ($dataSession['role'] == "admin") {
 								?>
 									<button type="button" class="btn btn-primary btn-circle btn-sm" title="Update" data-toggle="modal" data-target="#exampleModal" onclick="update('<?= $bm['id_detail_barang_keluar'] ?>')"><i class="fa fa-edit"></i></button>
-									<a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangkeluar/delete/') . $bm['id_barang_keluar'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
+									<a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangkeluar/deleteitem/') . $bm['id_detail_barang_keluar'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
 								<?php
 								} elseif ($dataSession['role'] == "gudang" or $dataSession['role'] == "kasir") {
 								?>

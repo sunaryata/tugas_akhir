@@ -211,6 +211,17 @@ class Barangmasuk extends CI_Controller
 		}
 	}
 
+	public function deleteitem($getId)
+    {
+        echo $id = encode_php_tags($getId);
+        if ($this->admin->delete('detail_barang_masuk', 'id_detail_barang_masuk', $id)) {
+            set_pesan('data berhasil dihapus.');
+        } else {
+            set_pesan('data gagal dihapus.', false);
+        }
+        redirect('barangmasuk');
+    }
+
 	public function delete($getId)
 	{
 		$id = encode_php_tags($getId);
