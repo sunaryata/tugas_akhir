@@ -2,7 +2,7 @@
     <div class="col-md-8">
         <div class="card shadow-sm border-bottom-dark">
             <div class="card-header bg-white py-3">
-                <h4 class="h5 align-middle m-0 font-weight-bold text-danger">
+                <h4 class="h5 align-middle m-0 font-weight-bold text-dark">
                     Form Ubah Password
                 </h4>
             </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-9 offset-md-3">
-                        <button type="submit" class="btn btn-danger">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </div>
                 <?= form_close(); ?>
