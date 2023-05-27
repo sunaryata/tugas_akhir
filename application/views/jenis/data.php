@@ -38,7 +38,7 @@
                             <td><?= $no++; ?></td>
                             <td><?= $j['nama_jenis']; ?></td>
                             <td>
-                                <a href="<?= base_url('jenis/edit/') . $j['id_jenis'] ?>" class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i></a>
+                                <a href="<?= base_url('jenis/edit/') . $j['id_jenis'] ?>" class="btn btn-primary btn-circle btn-sm"><i class="fa fa-edit"></i></a>
                                 <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('jenis/delete/') . $j['id_jenis'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
