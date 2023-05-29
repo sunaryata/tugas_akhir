@@ -9,6 +9,20 @@ function cek_login()
     }
 }
 
+function is_pimpinan()
+{
+    $ci = get_instance();
+    $role = $ci->session->userdata('login_session')['role'];
+
+    $status = true;
+
+    if ($role != 'pimpinan') {
+        $status = false;
+    }
+
+    return $status;
+}
+
 function is_admin()
 {
     $ci = get_instance();
@@ -22,20 +36,6 @@ function is_admin()
 
     return $status;
 }
-
-function is_gudang()
-{
-    $ci = get_instance();
-    $role = $ci->session->userdata('login_session')['role'];
-
-    $status = true;
-
-    if ($role != 'gudang') {
-        $status = false;
-    }
-
-    return $status;
-}
 function    is_kasir()
 {
     $ci = get_instance();
@@ -43,7 +43,7 @@ function    is_kasir()
 
     $status = true;
 
-    if ($role != 'gudang') {
+    if ($role != 'admin') {
         $status = false;
     }
 

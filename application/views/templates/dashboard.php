@@ -94,10 +94,11 @@
 						</div>
 					</div>
 				</li>
-			<?php endif; ?>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider">
+			<?php endif; ?>
+
 
 			<!-- Heading -->
 			<div class="sidebar-heading text-white">
@@ -145,7 +146,7 @@
 				</a>
 			</li>
 
-			<?php if (is_admin()) : ?>
+			<?php if (is_pimpinan()) : ?>
 				<!-- Divider -->
 				<hr class="sidebar-divider">
 

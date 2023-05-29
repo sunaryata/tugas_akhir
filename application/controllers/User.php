@@ -7,7 +7,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         cek_login();
-        if (!is_admin()) {
+        if (!is_pimpinan()) {
             redirect('dashboard');
         }
 
