@@ -49,12 +49,12 @@
 
                             <td>
                                 <?php
-                                if ($dataSession['role'] == "admin") {
+                                if ($dataSession['role'] == "pimpinan" or $dataSession['role'] == "admin") {
                                 ?>
 									<a href="<?= base_url('barangreturn/detail/') . $bk['id_barang_return'] ?>" class="btn btn-primary btn-circle btn-sm" title="detail"><i class="fa fa-eye"></i></a>
                                     <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangreturn/delete/') . $bk['id_barang_return'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
                                 <?php
-                                } elseif ($dataSession['role'] == "gudang" or $dataSession['role'] == "kasir") {
+                                } elseif ($dataSession['role'] == "admin" or $dataSession['role'] == "kasir") {
                                 ?>
                                     <a href="<?= base_url('barangreturn/edit/') . $bk['id_barang_return'] ?>" class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i></a>
                                 <?php

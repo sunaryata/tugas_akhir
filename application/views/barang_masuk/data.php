@@ -49,7 +49,7 @@
 							<td><?= $bm['nama']; ?></td>
 							<td>
 								<?php
-								if ($dataSession['role'] == "admin") {
+								if ($dataSession['role'] == "pimpinan" or $dataSession['role'] == "admin") {
 								?>
 									<a href="<?= base_url('barangmasuk/detail/') . $bm['id_barang_masuk'] ?>" class="btn btn-primary btn-circle btn-sm" title="detail"><i class="fa fa-eye"></i></a>
 									<a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangmasuk/delete/') . $bm['id_barang_masuk'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>

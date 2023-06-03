@@ -45,12 +45,12 @@
 							<td><?= $bm['jumlah_masuk']; ?></td>
 							<td>
 								<?php
-								if ($dataSession['role'] == "admin") {
+								if ($dataSession['role'] == "pimpinan" or $dataSession['role'] == "admin") {
 								?>
 									<button type="button" class="btn btn-primary btn-circle btn-sm" title="Update" data-toggle="modal" data-target="#exampleModal" onclick="update('<?= $bm['id_detail_barang_masuk'] ?>')"><i class="fa fa-edit"></i></button>
 									<a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barangmasuk/deleteitem/') . $bm['id_detail_barang_masuk'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
 								<?php
-								} elseif ($dataSession['role'] == "gudang" or $dataSession['role'] == "kasir") {
+								} elseif ($dataSession['role'] == "admin" or $dataSession['role'] == "kasir") {
 								?>
 									<a href="<?= base_url('barangmasuk/edit/') . $bm['id_barang_masuk'] ?>" class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i></a>
 								<?php

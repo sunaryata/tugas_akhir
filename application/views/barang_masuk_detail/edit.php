@@ -69,7 +69,7 @@
                 <div class="row form-group">
                     <label class="col-md-3 text-md-right" for="jumlah_masuk">Jumlah Masuk</label>
                     <div class="col-md-9">
-                        <input value="<?= set_value('jumlah_masuk', $barang['jumlah_masuk']); ?>" name="jumlah_masuk" id="jumlah_masuk" type="text" class="form-control" placeholder="Jumlah masuk">
+                        <input value="<?= set_value('jumlah_masuk', $barangmasuk['jumlah_masuk']); ?>" name="jumlah_masuk" id="jumlah_masuk" type="text" class="form-control" placeholder="Jumlah masuk">
                         <?= form_error('jumlah_masuk', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
